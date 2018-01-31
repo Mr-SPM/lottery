@@ -60,6 +60,10 @@ export default {
                 window.alert('人数设置不能为空');
                 return;
             }
+            if (this.tempCircle !== this.numbers.length) {
+                // window.alert('上一个抽奖还在进行中！请等待');
+                return;
+            }
             this.message = '';
             this.target = Math.round(Math.random() * this.max).toString();
             this.numbers = this.target.split('');
@@ -99,14 +103,13 @@ export default {
                             }, 1000);
                         }
                     }
-                }, 100);
+                }, 200);
         }
     }
 };
 </script>
 
 <style lang="scss" scoped>
-
 .content {
   display: flex;
   justify-content: center;
@@ -124,6 +127,7 @@ export default {
         background-color: rgb(241, 95, 95) !important;
         border-color: rgb(216, 77, 77);
         color: #333 !important;
+        font-size: 20px !important;
       }
     }
     tr {
@@ -131,9 +135,11 @@ export default {
         width: 80px;
         height: 60px;
         border: 1px solid #ccc;
+        transition: all 0.2s;
         &.current {
           background-color: aqua;
           color: #fff;
+          font-size: 48px;
         }
         &.btn {
           font-size: 24px;
