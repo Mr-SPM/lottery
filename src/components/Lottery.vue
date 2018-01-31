@@ -58,6 +58,7 @@ export default {
         start: function () {
             if (!this.max) {
                 window.alert('人数设置不能为空');
+                return;
             }
             this.message = '';
             this.target = Math.round(Math.random() * this.max).toString();
@@ -105,6 +106,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .content {
   display: flex;
   justify-content: center;
@@ -134,12 +136,12 @@ export default {
           color: #fff;
         }
         &.btn {
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            &:hover {
-                background-color: rgb(241, 95, 95);
-            }
+          font-size: 24px;
+          font-weight: bold;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(241, 95, 95);
+          }
         }
       }
     }
