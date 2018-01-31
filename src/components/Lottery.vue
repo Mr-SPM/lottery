@@ -11,7 +11,7 @@
                 <tr>
                     <td :class="{'current':tempIndex == 0}">0</td>
                     <td class="btn" rowspan="2" @click="start()">
-                        Start
+                        {{tempCircle === numbers.length ? 'Start':'Loading'}}
                     </td>
                     <td :class="{'current':tempIndex == 4}">4</td>
                 </tr>
@@ -132,8 +132,8 @@ export default {
     }
     tr {
       td {
-        width: 80px;
-        height: 60px;
+        width: 160px;
+        height: 120px;
         border: 1px solid #ccc;
         transition: all 0.2s;
         &.current {
