@@ -10,7 +10,7 @@
                 </tr>
                 <tr>
                     <td :class="{'current':tempIndex == 0}">0</td>
-                    <td rowspan="2" @click="start()">
+                    <td class="btn" rowspan="2" @click="start()">
                         Start
                     </td>
                     <td :class="{'current':tempIndex == 4}">4</td>
@@ -29,7 +29,7 @@
         <div>
             <span>人数：</span><input type="text" placeholder="人数" v-model="max" maxlength="3">
         </div>
-        <p>中奖人：{{message}}</p>
+        <p>中奖编号：{{message}}</p>
         <p v-if="tempCircle === numbers.length && tempCircle !== 0">恭喜中奖!!!</p>
         <div>
             <p>中奖列表</p>
@@ -132,6 +132,14 @@ export default {
         &.current {
           background-color: aqua;
           color: #fff;
+        }
+        &.btn {
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(241, 95, 95);
+            }
         }
       }
     }
